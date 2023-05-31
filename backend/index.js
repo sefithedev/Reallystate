@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 const authController = require("./controllers/authController");
+const propertyController = require("./controllers/propertyController");
+const uploadController = require("./controllers/uploadController");
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authController);
+app.use("/property", propertyController);
+app.use("/upload", uploadController);
 
 // Run server
 const port = process.env.PORT || 5000;

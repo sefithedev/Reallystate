@@ -25,7 +25,7 @@ authController.post("/register", async (req, res) => {
     const { password, ...userData } = user.toObject();
     console.log(userData);
     // create JWT token (register will automatically log the user in)
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "4h",
     });
 
@@ -62,7 +62,7 @@ authController.post("/login", async (req, res) => {
     }
 
     // create new token
-    const token = jwt.sign({ userId: userExists._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: userExists._id }, process.env.JWT_SECRET, {
       expiresIn: "4h",
     });
     const { password, ...userData } = userExists.toObject();
