@@ -76,7 +76,6 @@ const Navbar = () => {
 
   const size = mobile ? styles.small : "";
   const burger = mobile ? "" : styles.small;
-  const visible = mobile ? styles.mobile : "";
 
   return (
     <div onClick={() => setMobile(!mobile)} className={styles.container}>
