@@ -105,7 +105,7 @@ const Navbar = () => {
               <span>Welcom: {user.username}</span>
 
               <img
-                src={`http://localhost:5000/images/${user.profileImg}`}
+                src={`${process.env.REACT_APP_BACKEND_HOST}/images/${user.profileImg}`}
                 alt="user"
                 onClick={handleImageClick}
               />

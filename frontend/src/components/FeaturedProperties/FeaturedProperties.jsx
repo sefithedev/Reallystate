@@ -38,7 +38,7 @@ const FeaturedProperties = () => {
                 <img
                   src={
                     property.img
-                      ? `http://localhost:5000/images/${property.img}`
+                      ? `${process.env.REACT_APP_BACKEND_HOST}/images/${property.img}`
                       : img
                   }
                   alt=""

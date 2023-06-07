@@ -137,7 +137,7 @@ const Properties = () => {
                     className={classes.imgContainer}
                   >
                     <img
-                      src={`http://localhost:5000/images/${property?.img}`}
+                      src={`${process.env.REACT_APP_BACKEND_HOST}/images/${property?.img}`}
                       alt=""
                     />
                   </Link>
@@ -145,7 +145,7 @@ const Properties = () => {
                     <div className={classes.priceAndOwner}>
                       <span className={classes.price}>$ {property.price}</span>
                       <img
-                        src={`http://localhost:5000/images/${property?.currentOwner?.profileImg}`}
+                        src={`${process.env.REACT_APP_BACKEND_HOST}/images/${property?.currentOwner?.profileImg}`}
                         className={classes.owner}
                       />
                     </div>

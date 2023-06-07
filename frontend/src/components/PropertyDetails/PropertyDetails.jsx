@@ -55,7 +55,9 @@ const PropertyDetail = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <img src={`http://localhost:5000/images/${propertyDetail?.img}`} />
+          <img
+            src={`${process.env.REACT_APP_BACKEND_HOST}/images/${propertyDetail?.img}`}
+          />
         </div>
         <div className={styles.right}>
           <h3 className={styles.title}>Title: {`${propertyDetail?.title}`}</h3>
@@ -78,7 +80,7 @@ const PropertyDetail = () => {
               >
                 Owner:{" "}
                 <img
-                  src={`http://localhost:5000/images/${propertyDetail?.currentOwner?.profileImg}`}
+                  src={`${process.env.REACT_APP_BACKEND_HOST}/images/${propertyDetail?.currentOwner?.profileImg}`}
                   className={styles.owner}
                 />
               </span>

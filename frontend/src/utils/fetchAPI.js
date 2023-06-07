@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = `${process.env.REACT_APP_BACKEND_HOST}`;
 
 export const request = async (
   url,
