@@ -23,7 +23,6 @@ authController.post("/register", async (req, res) => {
 
     // get user data without the password - this would be sent to the frontend
     const { password, ...userData } = user.toObject();
-    console.log(userData);
     // create JWT token (register will automatically log the user in)
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "4h",
@@ -32,7 +31,6 @@ authController.post("/register", async (req, res) => {
     // send user data and new token to frontend
     return res.status(201).json({ userData, token });
   } catch (error) {
-    console.log(error);
     return res.status(500).json(err.message);
   }
 });

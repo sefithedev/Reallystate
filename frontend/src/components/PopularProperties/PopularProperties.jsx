@@ -15,7 +15,7 @@ const PopularProperties = () => {
         const data = await request("/property/get-count", "GET");
         setNumProperties(data);
       } catch (error) {
-        console.log(error.message);
+        console.log(error);
       }
     };
     fetchNumProperties();
@@ -41,7 +41,7 @@ const PopularProperties = () => {
           </Link>
           <Link
             className={styles.property}
-            to={`/properties?type=beach&continent=1&priceRange=2`}
+            to={`/properties?type=mountain&continent=1&priceRange=2`}
           >
             <img src={img2} alt="" />
             <div className={styles.quantity}>
@@ -51,7 +51,7 @@ const PopularProperties = () => {
           </Link>
           <Link
             className={styles.property}
-            to={`/properties?type=beach&continent=1&priceRange=2`}
+            to={`/properties?type=village&continent=1&priceRange=2`}
           >
             <img src={img3} alt="" />
             <div className={styles.quantity}>

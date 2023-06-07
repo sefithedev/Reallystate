@@ -7,7 +7,10 @@ const { request } = require("express");
 // get all
 propertyController.get("/get-all", async (req, res) => {
   try {
-    const properties = await Property.find({});
+    const properties = await Property.find({}).populate(
+      "currentOwner",
+      "-password"
+    );
     return res.status(200).json(properties);
   } catch (error) {
     return res.status(500).json(error.message);
@@ -56,7 +59,6 @@ propertyController.get("/get-count", async (req, res) => {
         type: typeValue,
       });
     }
-    console.log(properties);
     return res.status(200).json(properties);
   } catch (error) {
     return res.status(500).json(error.message);
@@ -68,8 +70,11 @@ propertyController.get("/get-single/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const objectId = new mongoose.Types.ObjectId(id);
-    const property = await Property.find({ _id: objectId });
-    return res.status(200).json(property);
+    const property = await Property.find({ _id: objectId }).populate(
+      "currentOwner",
+      "-password"
+    );
+    return res.status(200).json(property[0]);
   } catch (error) {
     return res.status(500).json(error.message);
   }

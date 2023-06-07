@@ -9,7 +9,7 @@
   border-bottom: 1px solid #888;
 }
 
-.wrapper {
+.outerWrapper {
   max-width: 1180px;
   margin: 0 auto;
   height: 100%;
@@ -70,4 +70,189 @@
   border-color: #2500ac;
   color: #2500ac;
   background-color: #fff;
+}
+
+.userContainer {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.userContainer > img {
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+}
+
+.userMenuContainer {
+  position: absolute;
+  top: 70px;
+
+  background-color: #aaa;
+}
+
+.userMenuContainer > ul {
+  list-style: none;
+}
+
+.userMenuContainer > ul > li {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 150ms all;
+}
+
+.userMenuContainer > ul > li:hover {
+  background-color: #3512d1;
+}
+
+.userMenuContainer > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.addPropertyContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
+.addPropertyWrapper {
+  position: relative;
+  background-color: #fff;
+  height: 80vh;
+  width: 35vw;
+  border-radius: 20px;
+}
+
+.addPropertyWrapper > h2 {
+  text-align: center;
+  margin: 2.5rem 0;
+  margin-bottom: 3.5rem;
+}
+
+.addPropertyWrapper > form > div > label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  margin-right: 1rem;
+}
+
+.removeIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.mobile {
+  display: none;
+}
+
+.close {
+  display: none;
+}
+
+@media only screen and (max-width: 650px) {
+  .outerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  .burgerIcon {
+    display: block;
+    font-size: 26px;
+  }
+
+  .left {
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+  .center {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    background-color: rgba(150, 150, 150, 0.95);
+    padding: 1rem;
+  }
+
+  .userContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.7rem;
+    background-color: rgba(150, 150, 150, 0.95);
+  }
+
+  .userContainer > span {
+    display: none;
+  }
+
+  .userMenuContainer {
+    right: 1rem;
+  }
+
+  select {
+    width: 100px;
+  }
+
+  .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .small {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 830px) {
+  .addPropertyWrapper {
+    position: relative;
+    background-color: #fff;
+    height: 95vh;
+    width: 35vw;
+    border-radius: 20px;
+  }
+
+  .addPropertyWrapper > h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .addPropertyWrapper form {
+    gap: 30px;
+  }
+  .addPropertyWrapper input {
+    margin: 0;
+  }
+
+  .addPropertyWrapper label {
+    margin: 0;
+  }
+
+  .addPropertyWrapper button {
+    margin: 0;
+  }
 }

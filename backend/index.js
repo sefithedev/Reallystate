@@ -20,7 +20,7 @@ mongoose
   .catch(() => console.log("MONGODB connection failed"));
 
 // Routes and middleware
-app.use("images", express.static("public/images"));
+app.use("/images", express.static("public/images"));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

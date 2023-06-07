@@ -15,7 +15,7 @@ const FeaturedProperties = () => {
         const data = await request("/property/get-featured", "GET");
         setFeaturedProperties(data);
       } catch (error) {
-        console.log(error.message);
+        console.log(error);
       }
     };
     fetchProperties();
@@ -32,10 +32,17 @@ const FeaturedProperties = () => {
           {featuredProperties?.map((property) => (
             <div key={property._id} className={styles.featuredProperty}>
               <Link
-                to={`/propertyDetials/${property._id}`}
+                to={`/property-details/${property._id}`}
                 className={styles.imgContainer}
               >
-                <img src={img} alt="" />
+                <img
+                  src={
+                    property.img
+                      ? `http://localhost:5000/images/${property.img}`
+                      : img
+                  }
+                  alt=""
+                />
               </Link>
 
               <div className={styles.details}>
